@@ -1,0 +1,2167 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    box-sizing:border-box;
+    letter-spacing:.1em;
+    text-decoration: none;
+    scroll-behavior:smooth ;
+    overflow-x: hidden;
+}
+:root{
+    height: 100%;
+    width:100%;
+}
+::-webkit-scrollbar{
+    width:6px;
+}
+::-webkit-scrollbar-track{
+    background:#d1e5ff;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#642bff,#ff22e6);
+    border-radius:15px;
+}
+/*----------------------------------------------------------------HEADER-----------------------------------------------------------------*/
+header{
+    position: absolute;
+    width:100%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+header video{
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+}
+header h2{
+    position:absolute;
+    top:3%;
+    left:0%;
+    padding:12px;
+    font-weight:bold;
+    color:white;
+    pointer-events:none;
+    animation: logo 2s linear forwards .3s;
+}
+header h2::first-letter{
+    color:rgb(239, 76, 27);
+    font-size:35px;
+    font-family: serif;
+}
+header .text{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width:80%;
+    height:60%;
+    top:26%;
+    left:10%;
+}
+header .text h1{
+    font-size: 72px;
+    text-align: center;
+    pointer-events: none;
+    color:transparent;
+    -webkit-text-stroke:1px #fff;
+    background:url('../images/flag.jpg');
+    -webkit-background-clip:text;
+    background-position:0 0;
+    animation:back 20s linear infinite;
+    overflow: hidden;
+}
+header .text p{
+    padding:4px;
+    text-align:center;
+     line-height: 1.5em;
+     font-size:18px;
+     color:white;  
+     overflow: hidden;
+}
+header .btn{
+    padding:12px;
+    font-size:19px;
+    font-weight:bold;
+     margin:20px;
+    color:white;
+    cursor:pointer;
+    backdrop-filter: blur(3px);
+    border: 1px solid white;
+    background: transparent;
+    z-index:1;
+    overflow: hidden;
+}
+header .btn span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0%;
+    height:100vh;
+    background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.8));
+    transition: .5s;
+    z-index:-1;
+}
+header .btn:hover span{
+   width:100%;
+}
+header .btn:hover{
+    color:rgba(255, 68, 0, 0.934);
+    border:6px outset transparent;
+   box-shadow: 0px 0px 15px #fff,0px 0px 10px #fff;
+}
+
+/*--------------------------------------------------------------NAV--------------------------------------------------------------------*/
+nav{
+    position:relative;
+    width:100%;
+    height:50vh;
+}
+nav .icon{
+    display:none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    cursor: pointer;
+    width: 15px;
+    height: 30px;
+    right: 1%;
+    top:0%;
+   }
+   nav #Home{
+      display:none;
+   }
+nav a{
+    position:relative;
+    top:12%;
+    left:50%;
+    font-size:22px;
+    font-weight:bold;
+    padding:25px;
+    color:white;
+    cursor:pointer;
+    transition:all .1s linear; 
+}
+nav a::after{
+    content: '';
+    position:absolute;
+    bottom:26%;
+    left:18%;
+    width:0%;
+    height:3px;
+    background:rgb(255, 145, 0);
+    transition: .5s;
+}
+nav a:hover::after{
+    width:60%;
+}
+nav a:hover{
+    top:8%;
+}
+
+/*--------------------------------------------------------------------ABOUT-------------------------------------------------------------*/
+.container {
+    position:absolute;
+    top:100%;
+    height:325vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container h2{
+        position: absolute;
+        top:1%;
+        left:44%;
+        color:rgba(0, 0, 0, 0.776);
+        font-size:53px;
+        font-weight:normal;
+       pointer-events: none;
+}
+.container #check{
+    display: none;
+}
+.container .para{
+    position:absolute;
+    top:4%;
+    left:0%;
+    width:100%;
+    height:310vh;
+    z-index: 1;
+    overflow: hidden;
+}
+.container .para p{
+    color:#000;
+    font-weight: lighter;
+    line-height: 1.4em;
+    text-align:justify;
+    font-size:17px;
+    padding: 6px 5px;
+    margin:0px 8em;
+}
+.container .show{
+    z-index: 2;
+    height:0%;
+    transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+.container .para label{ 
+    display: inline-block;
+    margin:0px 7em;
+     cursor: pointer;
+     font-size: 20px;
+     text-decoration-line:underline;
+     color:rgb(238,38,71);
+}
+#check:checked ~ .show{
+    height:12%;
+}
+#check:checked ~label{
+    visibility: hidden;
+}
+#check:checked ~ label::after{
+   content:'Read less'; 
+    visibility:visible;
+   display: block;
+}
+.container h1{
+    color:rgba(0, 0, 0, 0.765);
+    font-size:32px;
+     padding-top:22px ;
+    text-align: center;
+}
+.container #p3{
+    color: #000;
+    font-size: 22px;
+    text-align: center;
+}
+.container .box{
+    background:transparent;
+    height: 80vh;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+.box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+    background:#fff;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px #fff,-1px -1px 12px grey;
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+    cursor: pointer;
+    font-weight:lighter;
+    font-size: 20px;
+    color:#fff;
+    width:20%;
+    height:36%;
+   margin:0px 30px;
+   position:relative;
+   transition: all 0.3s ease;
+}
+.box #box1:hover,#box2:hover,#box3:hover,#box4:hover,#box5:hover,#box6:hover,#box7:hover,#box8:hover{
+    transform: scale(1.1);
+    border-radius: 10px;
+}
+.box span{
+    padding: 4px 22px;
+    height: 20%;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3));
+}
+.box #box1{
+    top:0%;
+    background: url('../images/heritage.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box2{
+    top:0%;
+    background: url('../images/Adventure.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box3{
+    top:0%;
+    background: url('../images/Art.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box4{
+    top:0%;
+    background: url('../images/Food.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box5{
+    top:0%;
+    background: url('../images/Nature.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box6{
+    top:0%;
+    background: url('../images/spiritual.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box7{
+    top:0%;
+    background: url('../images/Museums.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.box #box8{
+    top:0%;
+    background: url('../images/shooping.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/*-----------------------------------------------------------DESTINATIONS-----------------------------------------------------------------*/
+.container1 {
+    position:absolute;
+    height:180vh;
+    margin-top: 28px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container1 h2{
+    left:39%;
+}
+.bx{
+    position: absolute;
+    top:10%;
+    height:138vh;
+    width:100%;
+    background:transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: top; 
+    flex-wrap:wrap;
+    overflow: hidden;
+}
+.bx #bx1,#bx2,#bx3,#bx4{
+    position:relative;
+    top:3%;
+    background:#fff;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px #fff,-2px -2px 14px grey;
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+    cursor: pointer;
+    font-weight:lighter;
+    font-size: 20px;
+    color:#fff;
+    width:20%;
+    height:45%;
+   margin:0px 30px;
+   transition: all 0.5s ;
+}
+.bx #bx1:hover,#bx2:hover,#bx3:hover,#bx4:hover{
+    transform:translateY(-25px);
+}
+.bx #bx1{
+    background: url('../images/p.d..jpeg');
+    background-size:cover;
+    background-position: center;
+}
+#bx2{
+    background: url('../images/s.d..jpeg');
+    background-size: cover;
+}
+#bx3{
+    background: url('../images/h.d..jpeg');
+    background-size: cover;
+    background-position: center;
+}
+#bx4{
+    background: url('../images/s.u.t..jpeg');
+    background-size: cover;
+}
+.bx ul{
+    padding: 15px 24px 0px;
+    height: 13%;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3));
+    overflow-y: hidden;
+   transition: all 0.5s linear;
+}
+.bx #bx4 ul{
+    padding: 7px 24px;
+    height: 17%;
+}
+.bx ul li{
+    position: relative;
+    top:7%;
+    padding: 4px 0px;
+}
+.bx #bx1:hover ul,#bx2:hover ul,#bx3:hover ul,#bx4:hover ul{
+    height:100%;
+}
+.bx #check1,#check2,#check3,#check4{
+    display: none;
+}
+.bx label{
+    position: relative;
+    left:10%;
+    top:-30%;
+    color:#fff;
+    -webkit-text-stroke:1px orangered;
+}
+.bx #bx4 ul label{
+    position: relative;
+    left:-26%;
+    top:17%;
+}
+#show1,#show2,#show3,#show4{
+    margin-top: 8px;
+    background:transparent;
+    height:0vh;
+    width:100%;
+    transition: all 0.3s linear;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow:hidden;
+}
+#check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+    height:70vh;
+}
+#check1:checked ~ #bx1 ul label,#check2:checked ~ #bx2 ul label,#check3:checked ~ #bx3 ul label,#check4:checked ~ #bx4 ul label{
+    visibility: hidden;
+}
+#check1:checked ~ #bx1 ul label::after,#check2:checked ~ #bx2 ul label::after,#check3:checked ~ #bx3 ul label::after,
+#check4:checked ~ #bx4 ul label::after{
+    content:'Hide';
+    visibility:visible;
+    display: block;
+}
+ .shw{
+    position: relative;
+    top:5%;
+    width:24%;
+    height:30vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background: white;
+    box-shadow:10px 10px 30px #fff,-1px -1px 12px grey;
+}
+#show4 .shw{
+    top:0%;
+    width:34%;
+    height:50vh;
+}
+#shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+    color:black;
+    font-size: 17px;
+    margin: 0px 12px;
+    padding: 2px;
+}
+#shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+#shw7 p::first-line,#shw8 p::first-line{
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.img{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width:98%;
+    height: 26vh;
+    position: absolute;
+}
+.img img{
+    width:93%;
+    height: 26vh;
+    transition: transform 0.5s;
+}
+#show4 .img {
+    width:98%;
+    height: 46vh;
+}
+#show4 .img img{
+    width:96%;
+    height: 46vh;
+}
+.img span{
+    position: absolute;
+    left:40%;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    z-index:2;
+}
+.img span:hover+img{
+    transform: rotateX(180deg);
+    visibility: hidden;
+}
+
+
+/*------------------------------------------------------------KEYFRAMES----------------------------------------------------------------*/
+@keyframes back{
+    100%{
+        background-position:2000px 0;
+    }
+}
+@keyframes logo{
+    0%{
+        left:-14%;
+    }
+    50%{
+       transform:translateX(30px);
+    }
+    100%{
+        left:5%;
+    }
+}
+
+/*------------------------------------------------------------MEDIA QUERIES-------------------------------------------------------------*/
+/*-------------------1-------------------------*/
+@media (min-width:1091px) and (max-width:1200px){
+       nav a{
+        padding:18px;
+       }
+       .container h2{
+        left:42%;
+       }
+       .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 27px;
+         border-radius: 14px;
+        font-size: 16px;
+         font-weight:normal;
+       }
+       .container1 h2{
+        left:37%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 27px;
+        }
+        .bx label{
+            left:0%;
+            top:-45%;
+        }
+        .bx #bx4 ul label{
+          left:-48%;
+        }  
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 15px;
+        }  
+}
+/*---------------------2----------------------*/
+@media (min-width:1000px) and (max-width:1090px){ 
+       nav a{
+        padding:18px;
+        left:46%;
+       }
+       .container h2{
+        left:42%;
+       }
+       .container .para p{
+        font-size:16px;
+    }
+    .container .para label{ 
+        font-size:19px;
+   }
+       .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 20px;
+        width: 21%;
+         border-radius: 14px;
+        font-size: 16px;
+       }
+       .container1 h2{
+        left:37%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 20px;
+          font-size: 18px;
+           width: 21%;
+        }
+         .bx ul{
+             padding: 3px 22px 0px;
+        }
+        .bx label{
+            left:-12%;
+            top:-45%;
+        }
+        .bx #bx4 ul label{
+          left:-56%;
+        }  
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 14px;
+        }  
+}
+/*---------------------3----------------------*/
+@media (min-width:880px) and (max-width:999px){
+    header .text h1{
+        font-size:68px;
+    }
+       header #p1{
+         display: none;
+       }
+       header h2{
+        font-size:21px;
+       }
+       nav a{
+        padding:18px;
+        left:46%;
+        font-size:20px;
+       }
+       .container h2{
+        left:42%;
+       }
+       .container .para p{
+        font-size:15px;
+    }
+    .container .para label{ 
+         font-size:18px;
+    }
+    .container h1{
+        font-size:30px;
+    }
+    .container #p3{
+        font-size: 20px;
+    }
+       .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 17px;
+        width: 21%;
+        font-size: 16px;
+       }
+       .box #box5 span{
+         padding: 4px 22px;
+         height: 26%;
+       }
+       .box span{
+        padding: 8px 22px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:34%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 17px;
+          width: 21%;
+          font-size: 18px;
+        }
+         .bx ul{
+             padding: 4px 24px 0px;
+        }
+        .bx label{
+            left:-12%;
+            top:-45%;
+        }
+        .bx #bx4 ul label{
+          left:-56%;
+        }  
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 13px;
+        }  
+    #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+}
+}
+/*---------------------4----------------------*/
+@media (min-width:790px) and (max-width:879px){
+    header .text h1{
+        font-size:66px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:17px;
+       }   
+       header .btn{
+        font-size:17px;
+       }
+       header h2{
+        font-size:20px;
+       }
+       nav a{
+        padding:16px;
+        left:43%;
+        font-size:19px;
+       }
+        .container h2{
+        left:42%;
+       }
+       .container .para p{
+        font-size:14px;
+    }
+    .container .para label{ 
+         font-size:16px;
+    }
+    .container h1{
+        font-size:28px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 17px;
+    }
+       .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 15px;
+        width: 21%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       .box #box4 span,#box7 span{
+        padding: 8px 12px;
+      }
+      .box #box5 span{
+        font-size: 15px;
+        padding: 4px 12px;
+      }
+      .box span{
+       padding: 8px 22px;
+       height: 26%;
+   }
+     .box #box5 span{
+        padding: 1px 14px;
+        height: 22%;
+    }
+       .container1 h2{
+        left:34%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 11px;
+          width: 22%;
+          font-size: 16px;
+        }
+        .bx ul{
+             padding: 4px 16px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 10px 16px;
+        }
+        .bx label{
+            left:-12%;
+            top:-40%;
+        }
+        .bx #bx4 ul label{
+          left:-48%;
+        }
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 13px;
+        }  
+    #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:3%;
+        }
+    }
+}
+/*---------------------5----------------------*/
+@media (min-width:711px) and (max-width:789px){
+    header .text h1{
+        font-size:60px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:16px;
+       }   
+       header .btn{
+        font-size:16px;
+       }
+       header h2{
+        font-size:19px;
+       }
+       nav a{
+        padding:14px;
+        left:42%;
+        font-size:18px;
+       }
+           .container h2{
+        left:42%;
+        font-size:48px ;
+       }
+       .container .para p{
+        font-size:14px;
+    }
+    .container .para label{ 
+         font-size:16px;
+    }
+    .container h1{
+        font-size:26px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 16px;
+    }
+    .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 13px;
+        width: 21%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       .box #box4 span,#box5 span,#box7 span{
+        padding: 4px 12px;
+        font-size: 15px;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:34%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 8px;
+          width: 22%;
+          font-size: 16px;
+        }
+        .bx ul{
+             padding: 4px 16px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 16px;
+             font-size: 16px;
+        }
+        .bx label{
+            left:-12%;
+            top:-38%;
+        }
+        .bx #bx4 ul label{
+          left:-55%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 28%;
+        }
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 13px;
+        }  
+    #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------6----------------------*/
+@media (min-width:640px) and (max-width:710px){
+    header .text h1{
+        font-size:54px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:16px;
+       }   
+       header .btn{
+        font-size:16px;
+        padding:10px;
+       }
+       header h2{
+        font-size:21px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:22%;
+        height:16%;
+        cursor: pointer;
+        z-index:0;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:32%;
+        height: 90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align: center;
+        padding:24px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:38%;
+        font-size:48px ;
+       }
+       .container .para p{
+        font-size:14px;
+          margin:0px 5em;
+    }
+    .container .para label{ 
+         font-size:16px;
+          margin:0px 5em;
+    }
+    .container h1{
+        font-size:26px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 16px;
+    }
+    .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 10px;
+        width: 21%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       .box #box4 span,#box5 span,#box7 span{
+        padding: 4px 12px;
+        font-size: 15px;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:30%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 8px;
+          width: 22%;
+          font-size: 16px;
+        }
+        .bx ul{
+             padding: 4px 16px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 16px;
+             font-size: 16px;
+        }
+        .bx label{
+            left:-12%;
+            top:-38%;
+        }
+        .bx #bx4 ul label{
+          left:-55%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 28%;
+        }
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+    #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------7----------------------*/
+@media (min-width:580px) and (max-width:639px){
+    header .text h1{
+        font-size:49px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:16px;
+       }   
+       header .btn{
+        font-size:16px;
+        padding:10px;
+       }
+       header h2{
+        font-size:21px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:22%;
+        height:16%;
+        cursor: pointer;
+        z-index:0;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:34%;
+        height:90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align: center;
+        padding:24px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:40%;
+        font-size:42px ;
+       }
+       .container .para p{
+        font-size:14px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:16px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:26px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 16px;
+    }
+    .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 10px;
+        width: 21%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       .box #box4 span,#box5 span,#box7 span{
+        padding: 4px 12px;
+        font-size: 15px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:30%;
+        }
+        .bx #bx1,#bx2,#bx3,#bx4{
+          margin:0px 8px;
+          width: 22%;
+          font-size: 16px;
+        }
+        .bx ul{
+             padding: 4px 16px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 16px;
+             font-size: 16px;
+        }
+        .bx label{
+            left:-12%;
+            top:-38%;
+        }
+        .bx #bx4 ul label{
+          left:-55%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 32%;
+        }
+        #shw1 p,#shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+    #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------8----------------------*/
+@media (min-width:525px) and (max-width:579px){
+    header .text h1{
+        font-size:45px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:16px;
+       }   
+       header .btn{
+        font-size:16px;
+        padding:10px;
+       }
+       header h2{
+        font-size:21px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:22%;
+        height:15%;
+        cursor: pointer;
+        z-index:0;
+        border-radius: 10px;
+        backdrop-filter: blur(15px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:36%;
+        height:90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding:24px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:42%;
+        font-size:40px ;
+       }
+       .container .para p{
+        font-size:13px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:16px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:26px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 16px;
+    }
+    .box #box1,#box2,#box3,#box4,#box5,#box6,#box7,#box8{
+        margin:0px 10px;
+        width: 21%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       .box #box4 span,#box5 span,#box7 span{
+        padding: 4px 12px;
+        font-size: 15px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:30%;
+        }
+        .bx #bx1{
+            margin:0px;
+            width:0;
+        }
+        .bx #bx2,#bx3,#bx4{
+          margin:0px 8px;
+          width: 28%;
+          font-size: 16px;
+        }
+        .bx ul{
+             padding: 4px 16px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 16px;
+             font-size: 16px;
+        }
+        .bx label{
+            left:56%;
+            top:-38%;
+        }
+        .bx #bx4 ul label{
+          left:15%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 32%;
+        }
+        #shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+    #shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------9----------------------*/
+@media (min-width:450px) and (max-width:524px){
+    header .text h1{
+        font-size:44px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2 {
+        font-size:15px;
+       } 
+       header .btn{
+        font-size:16px;
+        padding:10px;
+       }
+       header h2{
+        font-size:21px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:22%;
+        height:15%;
+        cursor: pointer;
+        z-index:1;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:40%;
+        height: 90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding:24px 12px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:38%;
+        font-size:36px ;
+       }
+       .container .para p{
+        font-size:12px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:14px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:23px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 14px;
+    }
+    .box #box1,#box2,#box3,#box6,#box7,#box8{
+        margin:0px 8px;
+        width: 28%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       #box4,#box5{
+        width:0;
+        margin:0;
+       }
+       #box7 span{
+        padding: 1px 12px;
+        font-size: 14px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:30%;
+        }
+        .bx #bx1{
+            margin:0px;
+            width:0;
+        }
+        .bx #bx2,#bx3,#bx4{
+          margin:0px 8px;
+          width: 28%;
+          font-size: 14px;
+        }
+        .bx ul{
+             padding: 4px 13px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 12px 13px;
+             font-size: 14px;
+        }
+        .bx label{
+            left:30%;
+            top:10%;
+        }
+        .bx #bx4 ul label{
+          left:15%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 42%;
+        }
+       #shw1 p, #shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+        #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------10----------------------*/
+@media (min-width:390px) and (max-width:449px){
+    header .text h1{
+        font-size:44px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:15px;
+       }   
+       header .btn{
+        font-size:15px;
+        padding:10px;
+       }
+       header h2{
+        font-size:20px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:22%;
+        height:14%;
+        cursor: pointer;
+        z-index:1;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:42%;
+        height: 90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding:24px 10px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:38%;
+        font-size:36px ;
+       }
+       .container .para p{
+        font-size:12px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:14px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:23px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 14px;
+    }
+    .box #box1,#box2,#box3,#box6,#box7,#box8{
+        margin:0px 8px;
+        width: 28%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       #box4,#box5{
+        width:0;
+        margin:0;
+       }
+       #box7 span{
+        padding: 1px 12px;
+        font-size: 14px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:30%;
+        }
+        .bx #bx1{
+            margin:0px;
+            width:0;
+        }
+        .bx #bx2,#bx3,#bx4{
+          margin:0px 4px;
+          width: 31%;
+          font-size: 13px;
+        }
+        .bx ul{
+             padding: 4px 16px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 16px;
+             font-size: 13px;
+        }
+        .bx label{
+            left:30%;
+            top:10%;
+        }
+        .bx #bx4 ul label{
+          left:15%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 42%;
+        }
+       #shw1 p, #shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+        #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------11----------------------*/
+@media (min-width:350px) and (max-width:389px){
+    header .text h1{
+        font-size:42px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:15px;
+       }   
+       header .btn{
+        font-size:15px;
+        padding:10px;
+       }
+       header h2{
+        font-size:20px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:24%;
+        height:15%;
+        cursor: pointer;
+        z-index:1;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:46%;
+        height: 90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding: 24px 8px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:36%;
+        font-size:36px ;
+       }
+       .container .para p{
+        font-size:12px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:14px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:23px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 14px;
+    }
+    .box #box1,#box2,#box3,#box6,#box7,#box8{
+        margin:0px 8px;
+        width: 28%;
+        border-radius: 8px;
+        font-size: 16px;
+       }
+       #box4,#box5{
+        width:0;
+        margin:0;
+       }
+       #box7 span{
+        padding: 1px 12px;
+        font-size: 14px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:22%;
+        }
+        .bx #bx1{
+            margin:0px;
+            width:0;
+        }
+        .bx #bx2,#bx3,#bx4{
+          margin:0px 4px;
+          width: 31%;
+          font-size: 13px;
+        }
+        .bx ul{
+             padding: 10px 12px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 16px;
+             font-size: 13px;
+        }
+        .bx label{
+            left:30%;
+            top:10%;
+        }
+        .bx #bx4 ul label{
+          left:15%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 42%;
+        }
+       #shw1 p, #shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+        #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+      
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------12----------------------*/
+@media (min-width:305px) and (max-width:349px){
+    header .text h1{
+        font-size:40px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{
+          font-size:15px;
+       }   
+       header .btn{
+        font-size:15px;
+        padding:10px;
+       }
+       header h2{
+        font-size:19px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:24%;
+        height:13%;
+        cursor: pointer;
+        z-index:1;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:50%;
+        height:90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        font-size: 20px;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding: 24px 8px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:36%;
+        font-size:36px ;
+       }
+       .container .para p{
+        font-size:12px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:14px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:21px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 13px;
+    }
+    .box #box1,#box2,#box3,#box6,#box7,#box8{
+        margin:0px 4px;
+        width: 30%;
+        border-radius: 8px;
+        font-size: 14px;
+       }
+       #box4,#box5{
+        width:0;
+        margin:0;
+       }
+       #box7 span{
+        padding: 1px 12px;
+        font-size: 13px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:16%;
+        }
+        .bx #bx1{
+            margin:0px;
+            width:0;
+        }
+        .bx #bx2,#bx3,#bx4{
+          margin:0px 2px;
+          width: 31%;
+          font-size: 13px;
+        }
+        .bx ul{
+             padding: 4px 8px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 13px;
+             font-size: 13px;
+        }
+        .bx label{
+            left:30%;
+            top:10%;
+        }
+        .bx #bx4 ul label{
+          left:15%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 42%;
+        }
+       #shw1 p, #shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+        #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+/*---------------------13----------------------*/
+@media (min-width:248px) and (max-width:304px){
+    header .text h1{
+        font-size:38px;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{ 
+       font-size:14px;
+       }
+       header .btn{
+        font-size:15px;
+        padding:10px;
+       }
+       header h2{
+        font-size:19px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:3%;
+        height:16%;
+        cursor: pointer;
+        z-index:1;
+        border-radius: 10px;
+        backdrop-filter: blur(15px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:72%;
+        height:90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding: 24px 6px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+      .container h2{
+        left:36%;
+        font-size:36px ;
+       }
+       .container .para p{
+        font-size:12px;
+          margin:0px 1em;
+    }
+    .container .para label{ 
+         font-size:14px;
+          margin:0px 1em;
+    }
+    .container h1{
+        font-size:21px;
+        margin-left:22px;
+    }
+    .container #p3{
+        font-size: 13px;
+    }
+    .box #box1,#box2,#box3,#box6,#box7,#box8{
+        margin:0px 4px;
+        width: 30%;
+        border-radius: 8px;
+        font-size: 14px;
+       }
+       #box4,#box5{
+        width:0;
+        margin:0;
+       }
+       #box7 span{
+        padding: 1px 12px;
+        font-size: 13px;
+        overflow: hidden;
+      }
+       .box span{
+        padding: 12px 14px;
+        height: 26%;
+    }
+       .container1 h2{
+        left:16%;
+        }
+        .bx #bx1{
+            margin:0px;
+            width:0;
+        }
+        .bx #bx2,#bx3,#bx4{
+          margin:0px 2px;
+          width: 31%;
+          font-size: 13px;
+        }
+        .bx ul{
+             padding: 4px 8px 0px;
+        }
+        .bx #bx4 ul{
+             padding: 15px 13px;
+             font-size: 13px;
+        }
+        .bx label{
+            left:30%;
+            top:10%;
+        }
+        .bx #bx4 ul label{
+          left:15%;
+        }
+        #check1:checked ~ #show1,#check2:checked ~ #show2,#check3:checked ~ #show3,#check4:checked ~ #show4{
+            height:30vh;
+        }
+        #show1,#show2,#show3,#show4{
+            overflow:scroll;
+            overflow-x: hidden;
+        }  
+        .shw{
+        width: 42%;
+        }
+       #shw1 p, #shw2 p,#shw3 p,#shw4 p,#shw5 p,#shw6 p,#shw7 p,#shw8 p{
+            font-size: 11px;
+        }  
+        #shw1 p::first-line,#shw2 p::first-line,#shw3 p::first-line,#shw4 p::first-line,#shw5 p::first-line,#shw6 p::first-line,
+    #shw7 p::first-line,#shw8 p::first-line{
+    font-size: 18px;
+    }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
+
+@media (min-width:100px) and (max-width:247px){
+    header .text h1{
+        font-size:30px;
+        overflow: scroll;
+     }   
+      header .text #p1{
+        display:none;
+       }
+       header .text #p2{ 
+       font-size:12px;
+       overflow: scroll;
+       }
+       header .btn{
+        font-size:15px;
+        padding:10px;
+       }
+       header h2{
+        font-size:16px;
+       }
+       nav .icon{
+        display: flex;
+       }
+       nav{
+        position: absolute;
+        right:2%;
+        top:5%;
+        width:3%;
+        height:16%;
+        cursor: pointer;
+        z-index:1;
+        border-radius: 10px;
+        backdrop-filter: blur(15px);
+        background:rgba(255,255,255,0.1);
+        transition:all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+       }
+     nav:hover{
+        width:72%;
+        height:90%;
+     }
+       nav a{
+        display:block;
+        position: relative;
+        left:0%;
+        top:20%;
+        text-align:center;
+        padding: 24px 6px;
+       }
+       nav a::after{
+        bottom:21%;
+        left:31%;
+        width:0%;
+    }
+    nav a:hover::after{
+        width:38%;
+    }
+    nav a:hover:nth-child(4)::after{
+        width:52%;
+        left:24%;
+    }
+       nav a:hover{
+        top:18%;
+      }
+       @keyframes logo{
+        0%{
+            left:-14%;
+        }
+        50%{
+           transform:translateX(30px);
+        }
+        100%{
+            left:2%;
+        }
+    }
+}
